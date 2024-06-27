@@ -29,7 +29,119 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Blogs" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" target="_blank" rel="noopener" href="https://github.com/Mr-xiongyq">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub上下载" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-06-27T07:03:20.000Z" title="2024/6/27 15:03:20">2024-06-27</time>发表</span><span class="level-item"><time dateTime="2024-06-27T07:11:39.085Z" title="2024/6/27 15:11:39">2024-06-27</time>更新</span><span class="level-item">24 分钟读完 (大约3528个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/06/27/%E9%9D%A2%E7%BB%8F2-attention-%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/">面经2-attention(注意力机制)</a></p><div class="content"><h2 id="1-通俗的解释什么是attention"><a href="#1-通俗的解释什么是attention" class="headerlink" title="1.通俗的解释什么是attention"></a>1.通俗的解释什么是attention</h2><p>注意力机制（Attention Mechanism）是深度学习中一种非常重要的技术，它帮助模型更好地“关注”输入数据中的重要部分。为了更通俗地解释，我们可以用一个简单的类比来帮助理解。</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Blogs" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" target="_blank" rel="noopener" href="https://github.com/Mr-xiongyq">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub上下载" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-06-27T07:03:20.000Z" title="2024/6/27 15:03:20">2024-06-27</time>发表</span><span class="level-item"><time dateTime="2024-06-27T07:11:39.085Z" title="2024/6/27 15:11:39">2024-06-27</time>更新</span><span class="level-item">24 分钟读完 (大约3528个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/06/27/%E9%9D%A2%E7%BB%8F2-attention-%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/">面经2-attention(注意力机制)</a></p><div class="content"><h2 id="1-通俗的解释什么是attention"><a href="#1-通俗的解释什么是attention" class="headerlink" title="1.通俗的解释什么是attention"></a>1.通俗的解释什么是attention</h2><p>注意力机制（Attention Mechanism）是深度学习中一种非常重要的技术，它帮助模型更好地“关注”输入数据中的重要部分。为了更通俗地解释，我们可以用一个简单的类比来帮助理解。</p>
 <h3 id="类比：读书做笔记"><a href="#类比：读书做笔记" class="headerlink" title="类比：读书做笔记"></a>类比：读书做笔记</h3><p>假设你在阅读一本书，并且需要在阅读过程中做一些笔记。书中的内容非常多，但你不能也不需要记住每一个字。那么你会怎么做呢？你会重点关注那些对你来说重要的信息。注意力机制就像你在读书时选择性地关注重要内容一样。</p>
 <h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h3><ol>
 <li><p><strong>输入信息</strong>：</p>
@@ -188,7 +300,7 @@
 <li>生成更平滑的注意力权重分布，避免softmax输出的极端化，稳定梯度更新过程。</li>
 </ol>
 <p>这一步骤是Transformer模型中的一个重要细节，确保了注意力机制在高维情况下的有效性和稳定性。</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-06-27T06:53:24.000Z" title="2024/6/27 14:53:24">2024-06-27</time>发表</span><span class="level-item"><time dateTime="2024-06-27T07:43:26.064Z" title="2024/6/27 15:43:26">2024-06-27</time>更新</span><span class="level-item">19 分钟读完 (大约2908个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/06/27/%E9%9D%A2%E7%BB%8F/">面经</a></p><div class="content"><h2 id="1-Transformer模型的结构"><a href="#1-Transformer模型的结构" class="headerlink" title="1. Transformer模型的结构"></a>1. Transformer模型的结构</h2><p>Transformer模型是由Vaswani等人在2017年提出的一种深度学习模型，主要用于自然语言处理任务，如翻译、文本生成等。Transformer模型的核心架构由编码器（Encoder）和解码器（Decoder）组成。以下是Transformer模型的详细结构：</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-06-27T06:53:24.000Z" title="2024/6/27 14:53:24">2024-06-27</time>发表</span><span class="level-item"><time dateTime="2024-06-27T07:46:41.761Z" title="2024/6/27 15:46:41">2024-06-27</time>更新</span><span class="level-item">19 分钟读完 (大约2908个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/06/27/%E9%9D%A2%E7%BB%8F/">面经</a></p><div class="content"><h2 id="1-Transformer模型的结构"><a href="#1-Transformer模型的结构" class="headerlink" title="1. Transformer模型的结构"></a>1. Transformer模型的结构</h2><p>Transformer模型是由Vaswani等人在2017年提出的一种深度学习模型，主要用于自然语言处理任务，如翻译、文本生成等。Transformer模型的核心架构由编码器（Encoder）和解码器（Decoder）组成。以下是Transformer模型的详细结构：</p>
 <h3 id="1-编码器（Encoder）"><a href="#1-编码器（Encoder）" class="headerlink" title="1. 编码器（Encoder）"></a>1. 编码器（Encoder）</h3><p>编码器部分由N个相同的编码器层（Encoder Layer）堆叠而成。每个编码器层包括两个子层：</p>
 <h4 id="a-多头自注意力机制（Multi-Head-Self-Attention-Mechanism）"><a href="#a-多头自注意力机制（Multi-Head-Self-Attention-Mechanism）" class="headerlink" title="a. 多头自注意力机制（Multi-Head Self-Attention Mechanism）"></a>a. 多头自注意力机制（Multi-Head Self-Attention Mechanism）</h4><ul>
 <li><strong>输入</strong>：一组向量表示（如单词的词嵌入）。</li>
@@ -220,9 +332,9 @@
 </ul>
 <h3 id="注意力机制（Attention-Mechanism）"><a href="#注意力机制（Attention-Mechanism）" class="headerlink" title="注意力机制（Attention Mechanism）"></a>注意力机制（Attention Mechanism）</h3><p>Transformer的核心是注意力机制，特别是自注意力机制。以下是其关键步骤：</p>
 <ol>
-<li><p><strong>计算注意力分数（Scores）</strong>：<br>[<br>\text{Attention}(Q, K, V) &#x3D; \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V<br>]<br>其中，( Q ) 是查询矩阵，( K ) 是键矩阵，( V ) 是值矩阵，( d_k ) 是键向量的维度。</p>
+<li><p><strong>计算注意力分数（Scores）</strong>：<br>[<br>\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V<br>]<br>其中，( Q ) 是查询矩阵，( K ) 是键矩阵，( V ) 是值矩阵，( d_k ) 是键向量的维度。</p>
 </li>
-<li><p><strong>多头注意力（Multi-Head Attention）</strong>：<br>通过并行的多个注意力头来学习不同的特征表示：<br>[<br>\text{MultiHead}(Q, K, V) &#x3D; \text{Concat}(\text{head}_1, \text{head}_2, …, \text{head}<em>h) W^O<br>]<br>每个头的计算方法类似，但使用不同的参数。<br>$$ J_\alpha(x) &#x3D; \sum</em>{m&#x3D;0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} $$</p>
+<li><p><strong>多头注意力（Multi-Head Attention）</strong>：<br>通过并行的多个注意力头来学习不同的特征表示：<br>[<br>\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \text{head}_2, …, \text{head}<em>h) W^O<br>]<br>每个头的计算方法类似，但使用不同的参数。<br>$$ J_\alpha(x) = \sum</em>{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha} $$</p>
 </li>
 </ol>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Transformer模型通过并行化的多头自注意力机制和前馈神经网络，极大地提高了序列到序列任务的效率和性能。它在许多自然语言处理任务中都取得了显著的成功，并成为了现代自然语言处理的基石。</p>
@@ -264,7 +376,7 @@
 <li><strong>原因</strong>：在处理变长序列时，输入序列通常被填充到相同长度。填充部分（通常是零）不应该影响注意力机制的计算，因此使用填充掩码来忽略这些位置。</li>
 <li><strong>实现</strong>：将填充位置的注意力分数设为负无穷大，以确保softmax后的注意力权重为零。</li>
 </ul>
-<h4 id="b-Look-Ahead-Mask（前瞻掩码，也称为Causal-Mask-未来掩码）"><a href="#b-Look-Ahead-Mask（前瞻掩码，也称为Causal-Mask-未来掩码）" class="headerlink" title="b. Look-Ahead Mask（前瞻掩码，也称为Causal Mask&#x2F;未来掩码）"></a>b. Look-Ahead Mask（前瞻掩码，也称为Causal Mask&#x2F;未来掩码）</h4><ul>
+<h4 id="b-Look-Ahead-Mask（前瞻掩码，也称为Causal-Mask-未来掩码）"><a href="#b-Look-Ahead-Mask（前瞻掩码，也称为Causal-Mask-未来掩码）" class="headerlink" title="b. Look-Ahead Mask（前瞻掩码，也称为Causal Mask/未来掩码）"></a>b. Look-Ahead Mask（前瞻掩码，也称为Causal Mask/未来掩码）</h4><ul>
 <li><strong>用途</strong>：确保在解码阶段，每个位置只能看到当前及之前的位置，不能看到未来的位置。</li>
 <li><strong>位置</strong>：在解码器中的自注意力层。</li>
 <li><strong>原因</strong>：在序列生成任务中（如语言模型或翻译），当前步骤的输出不能依赖未来的输入，因此需要前瞻掩码来阻止模型在当前时间步关注到未来时间步的信息。</li>
