@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>标签: 面经1-swimtransformer - Blogs</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#ffffff"><meta name="application-name" content="Edward&#039;s Blogs"><meta name="msapplication-TileImage" content="/source/icon.jpg"><meta name="msapplication-TileColor" content="#ffffff"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Edward&#039;s Blogs"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Blogs"><meta property="og:url" content="https://mr-xiongyq.github.io/"><meta property="og:site_name" content="Blogs"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://mr-xiongyq.github.io/img/og_image.png"><meta property="article:author" content="Xiongyuqi"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://mr-xiongyq.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://mr-xiongyq.github.io"},"headline":"Blogs","image":["https://mr-xiongyq.github.io/img/og_image.png"],"author":{"@type":"Person","name":"Xiongyuqi"},"publisher":{"@type":"Organization","name":"Blogs","logo":{"@type":"ImageObject","url":"https://mr-xiongyq.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://npm.elemecdn.com/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://npm.elemecdn.com/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://npm.elemecdn.com/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://npm.elemecdn.com/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Blogs" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" target="_blank" rel="noopener" href="https://github.com/Mr-xiongyq">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub上下载" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">面经1-swimtransformer</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-06-27T06:53:24.000Z" title="2024/6/27 14:53:24">2024-06-27</time>发表</span><span class="level-item"><time dateTime="2024-06-27T07:01:43.404Z" title="2024/6/27 15:01:43">2024-06-27</time>更新</span><span class="level-item">19 分钟读完 (大约2890个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/06/27/%E9%9D%A2%E7%BB%8F/">面经</a></p><div class="content"><h2 id="1-Transformer模型的结构"><a href="#1-Transformer模型的结构" class="headerlink" title="1. Transformer模型的结构"></a>1. Transformer模型的结构</h2><p>Transformer模型是由Vaswani等人在2017年提出的一种深度学习模型，主要用于自然语言处理任务，如翻译、文本生成等。Transformer模型的核心架构由编码器（Encoder）和解码器（Decoder）组成。以下是Transformer模型的详细结构：</p>
+<h3 id="1-编码器（Encoder）"><a href="#1-编码器（Encoder）" class="headerlink" title="1. 编码器（Encoder）"></a>1. 编码器（Encoder）</h3><p>编码器部分由N个相同的编码器层（Encoder Layer）堆叠而成。每个编码器层包括两个子层：</p>
+<h4 id="a-多头自注意力机制（Multi-Head-Self-Attention-Mechanism）"><a href="#a-多头自注意力机制（Multi-Head-Self-Attention-Mechanism）" class="headerlink" title="a. 多头自注意力机制（Multi-Head Self-Attention Mechanism）"></a>a. 多头自注意力机制（Multi-Head Self-Attention Mechanism）</h4><ul>
+<li><strong>输入</strong>：一组向量表示（如单词的词嵌入）。</li>
+<li><strong>输出</strong>：对输入向量进行加权求和，以捕捉全局依赖关系。</li>
+<li><strong>多头机制</strong>：通过多个注意力头（Attention Heads）来捕捉不同子空间的特征。</li>
+</ul>
+<h4 id="b-前馈神经网络（Feed-Forward-Neural-Network）"><a href="#b-前馈神经网络（Feed-Forward-Neural-Network）" class="headerlink" title="b. 前馈神经网络（Feed-Forward Neural Network）"></a>b. 前馈神经网络（Feed-Forward Neural Network）</h4><ul>
+<li>包含两个线性变换层和一个激活函数（通常是ReLU）。</li>
+<li><strong>输入</strong>：经过多头自注意力机制后的输出。</li>
+<li><strong>输出</strong>：经过非线性变换后的表示。</li>
+</ul>
+<p>每个子层后都有一个残差连接（Residual Connection）和层归一化（Layer Normalization）。</p>
+<h3 id="2-解码器（Decoder）"><a href="#2-解码器（Decoder）" class="headerlink" title="2. 解码器（Decoder）"></a>2. 解码器（Decoder）</h3><p>解码器部分也由N个相同的解码器层（Decoder Layer）堆叠而成。每个解码器层包括三个子层：</p>
+<h4 id="a-多头自注意力机制（Masked-Multi-Head-Self-Attention-Mechanism）"><a href="#a-多头自注意力机制（Masked-Multi-Head-Self-Attention-Mechanism）" class="headerlink" title="a. 多头自注意力机制（Masked Multi-Head Self-Attention Mechanism）"></a>a. 多头自注意力机制（Masked Multi-Head Self-Attention Mechanism）</h4><ul>
+<li>类似于编码器中的多头自注意力机制，但这里的自注意力是被掩盖的，以确保解码过程中当前词只能关注到之前的词。</li>
+</ul>
+<h4 id="b-编码器-解码器注意力机制（Encoder-Decoder-Attention-Mechanism）"><a href="#b-编码器-解码器注意力机制（Encoder-Decoder-Attention-Mechanism）" class="headerlink" title="b. 编码器-解码器注意力机制（Encoder-Decoder Attention Mechanism）"></a>b. 编码器-解码器注意力机制（Encoder-Decoder Attention Mechanism）</h4><ul>
+<li><strong>输入</strong>：编码器的输出和解码器自注意力的输出。</li>
+<li><strong>输出</strong>：结合编码器信息和当前解码步骤信息的表示。</li>
+</ul>
+<h4 id="c-前馈神经网络（Feed-Forward-Neural-Network）"><a href="#c-前馈神经网络（Feed-Forward-Neural-Network）" class="headerlink" title="c. 前馈神经网络（Feed-Forward Neural Network）"></a>c. 前馈神经网络（Feed-Forward Neural Network）</h4><ul>
+<li>与编码器中的前馈神经网络类似。</li>
+</ul>
+<p>每个子层后也有残差连接和层归一化。</p>
+<h3 id="3-位置编码（Positional-Encoding）"><a href="#3-位置编码（Positional-Encoding）" class="headerlink" title="3. 位置编码（Positional Encoding）"></a>3. 位置编码（Positional Encoding）</h3><p>由于Transformer没有卷积和循环结构，它使用位置编码来注入关于序列顺序的信息。这些位置编码是添加到输入向量中的。</p>
+<h3 id="4-全局架构"><a href="#4-全局架构" class="headerlink" title="4. 全局架构"></a>4. 全局架构</h3><ul>
+<li><strong>编码器</strong>：将输入序列编码为一组隐层表示。</li>
+<li><strong>解码器</strong>：基于编码器的表示和之前生成的词，生成输出序列。</li>
+</ul>
+<h3 id="注意力机制（Attention-Mechanism）"><a href="#注意力机制（Attention-Mechanism）" class="headerlink" title="注意力机制（Attention Mechanism）"></a>注意力机制（Attention Mechanism）</h3><p>Transformer的核心是注意力机制，特别是自注意力机制。以下是其关键步骤：</p>
+<ol>
+<li><p><strong>计算注意力分数（Scores）</strong>：<br>[<br>\text{Attention}(Q, K, V) &#x3D; \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V<br>]<br>其中，( Q ) 是查询矩阵，( K ) 是键矩阵，( V ) 是值矩阵，( d_k ) 是键向量的维度。</p>
+</li>
+<li><p><strong>多头注意力（Multi-Head Attention）</strong>：<br>通过并行的多个注意力头来学习不同的特征表示：<br>[<br>\text{MultiHead}(Q, K, V) &#x3D; \text{Concat}(\text{head}_1, \text{head}_2, …, \text{head}_h) W^O<br>]<br>每个头的计算方法类似，但使用不同的参数。</p>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Transformer模型通过并行化的多头自注意力机制和前馈神经网络，极大地提高了序列到序列任务的效率和性能。它在许多自然语言处理任务中都取得了显著的成功，并成为了现代自然语言处理的基石。</p>
+<h2 id="2-为什么要用-SwimTransformer-而不用cnn"><a href="#2-为什么要用-SwimTransformer-而不用cnn" class="headerlink" title="2. 为什么要用 SwimTransformer 而不用cnn"></a>2. 为什么要用 SwimTransformer 而不用cnn</h2><p>Swin Transformer 和 CNN（卷积神经网络）在架构和处理图像的方式上有显著的区别。以下是对这两者的详细比较以及Swin Transformer的优势：</p>
+<h3 id="1-架构区别"><a href="#1-架构区别" class="headerlink" title="1. 架构区别"></a>1. 架构区别</h3><h4 id="CNN（卷积神经网络）"><a href="#CNN（卷积神经网络）" class="headerlink" title="CNN（卷积神经网络）"></a>CNN（卷积神经网络）</h4><ul>
+<li><strong>基本单元</strong>：卷积层（Convolutional Layer），通过卷积核（filter）提取局部特征。</li>
+<li><strong>特征提取方式</strong>：局部感受野（Local Receptive Field），在输入图像的局部区域内滑动卷积核进行特征提取。</li>
+<li><strong>池化层（Pooling Layer）</strong>：用于下采样，减小特征图尺寸，通常使用最大池化（Max Pooling）或平均池化（Average Pooling）。</li>
+<li><strong>层次结构</strong>：通常由多个卷积层、池化层和全连接层（Fully Connected Layer）堆叠而成。</li>
+</ul>
+<h4 id="Swin-Transformer（滑动窗口Transformer）"><a href="#Swin-Transformer（滑动窗口Transformer）" class="headerlink" title="Swin Transformer（滑动窗口Transformer）"></a>Swin Transformer（滑动窗口Transformer）</h4><ul>
+<li><strong>基本单元</strong>：Transformer编码器层（Transformer Encoder Layer），采用自注意力机制（Self-Attention Mechanism）。</li>
+<li><strong>特征提取方式</strong>：通过滑动窗口（Sliding Window）进行局部注意力计算，划分图像为不重叠的窗口，在每个窗口内计算自注意力。</li>
+<li><strong>分层结构</strong>：包括多层Swin Transformer块，每个块包含局部注意力机制、跨窗口连接和前馈网络。</li>
+<li><strong>多尺度表示</strong>：通过分层设计实现多尺度特征提取，类似于CNN中的层次结构，但更灵活。</li>
+</ul>
+<h3 id="2-优势比较"><a href="#2-优势比较" class="headerlink" title="2. 优势比较"></a>2. 优势比较</h3><h4 id="CNN-的优势"><a href="#CNN-的优势" class="headerlink" title="CNN 的优势"></a>CNN 的优势</h4><ol>
+<li><strong>计算效率高</strong>：卷积操作在计算和内存上都非常高效，特别适合在图像处理中应用。</li>
+<li><strong>局部特征提取</strong>：擅长提取局部特征，如边缘、纹理等，适用于大多数图像识别任务。</li>
+<li><strong>结构简单</strong>：卷积层和池化层的设计简单明了，易于理解和实现。</li>
+</ol>
+<h4 id="Swin-Transformer-的优势"><a href="#Swin-Transformer-的优势" class="headerlink" title="Swin Transformer 的优势"></a>Swin Transformer 的优势</h4><ol>
+<li><strong>全局建模能力</strong>：通过自注意力机制，能够在整个图像范围内建立全局上下文关系，而不仅仅局限于局部区域。</li>
+<li><strong>灵活的窗口设计</strong>：滑动窗口机制结合了局部和全局特征提取的优势，通过窗口内和跨窗口的注意力计算，能够更好地捕捉多尺度信息。</li>
+<li><strong>适应性强</strong>：可以通过改变窗口大小和层数，灵活调整模型以适应不同规模和复杂度的任务。</li>
+<li><strong>统一架构</strong>：Transformer架构在自然语言处理和计算机视觉任务中的成功应用，表明其在处理不同类型数据上的强大适应性。</li>
+</ol>
+<h3 id="为什么使用-Swin-Transformer-而不是-CNN"><a href="#为什么使用-Swin-Transformer-而不是-CNN" class="headerlink" title="为什么使用 Swin Transformer 而不是 CNN"></a>为什么使用 Swin Transformer 而不是 CNN</h3><ol>
+<li><strong>全局特征提取</strong>：Swin Transformer的自注意力机制可以在整个图像上建模长距离依赖关系，适合处理需要全局上下文信息的任务，如目标检测和语义分割。</li>
+<li><strong>多尺度特征</strong>：通过滑动窗口和分层设计，Swin Transformer能够更好地捕捉不同尺度的特征，这在多尺度特征非常重要的任务中表现出色。</li>
+<li><strong>灵活性和扩展性</strong>：Swin Transformer具有很强的灵活性，可以方便地扩展和调整以适应不同的任务和数据规模。而CNN的结构较为固定，适应性相对较差。</li>
+<li><strong>一致性和统一性</strong>：Transformer在不同任务中的成功应用，使其成为一种通用的架构，便于在不同任务之间共享和转移学习，而不需要设计不同的模型。</li>
+</ol>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>虽然CNN在计算效率和局部特征提取方面具有优势，但Swin Transformer通过结合自注意力机制和滑动窗口设计，实现了更强的全局建模能力和多尺度特征提取能力，适应性更强，尤其在处理复杂图像任务时表现出色。因此，在需要全局上下文信息和多尺度特征的任务中，使用Swin Transformer往往能够获得更好的效果。</p>
+<h2 id="3-为什么transformer-需要mask（掩码）"><a href="#3-为什么transformer-需要mask（掩码）" class="headerlink" title="3.为什么transformer 需要mask（掩码）"></a>3.为什么transformer 需要mask（掩码）</h2><p>Transformer中的mask（掩码）在不同的阶段和子模块中有不同的用途，主要是为了控制注意力机制的范围和确保模型生成输出时的正确性。以下是Transformer中不同类型mask的详细说明及其原因：</p>
+<h3 id="1-自注意力中的Mask（Self-Attention-Mask）"><a href="#1-自注意力中的Mask（Self-Attention-Mask）" class="headerlink" title="1. 自注意力中的Mask（Self-Attention Mask）"></a>1. 自注意力中的Mask（Self-Attention Mask）</h3><h4 id="a-Padding-Mask（填充掩码）"><a href="#a-Padding-Mask（填充掩码）" class="headerlink" title="a. Padding Mask（填充掩码）"></a>a. Padding Mask（填充掩码）</h4><ul>
+<li><strong>用途</strong>：用于忽略填充部分的影响。</li>
+<li><strong>位置</strong>：在输入序列中。</li>
+<li><strong>原因</strong>：在处理变长序列时，输入序列通常被填充到相同长度。填充部分（通常是零）不应该影响注意力机制的计算，因此使用填充掩码来忽略这些位置。</li>
+<li><strong>实现</strong>：将填充位置的注意力分数设为负无穷大，以确保softmax后的注意力权重为零。</li>
+</ul>
+<h4 id="b-Look-Ahead-Mask（前瞻掩码，也称为Causal-Mask-未来掩码）"><a href="#b-Look-Ahead-Mask（前瞻掩码，也称为Causal-Mask-未来掩码）" class="headerlink" title="b. Look-Ahead Mask（前瞻掩码，也称为Causal Mask&#x2F;未来掩码）"></a>b. Look-Ahead Mask（前瞻掩码，也称为Causal Mask&#x2F;未来掩码）</h4><ul>
+<li><strong>用途</strong>：确保在解码阶段，每个位置只能看到当前及之前的位置，不能看到未来的位置。</li>
+<li><strong>位置</strong>：在解码器中的自注意力层。</li>
+<li><strong>原因</strong>：在序列生成任务中（如语言模型或翻译），当前步骤的输出不能依赖未来的输入，因此需要前瞻掩码来阻止模型在当前时间步关注到未来时间步的信息。</li>
+<li><strong>实现</strong>：通过一个上三角矩阵来掩盖未来位置，将未来位置的注意力分数设为负无穷大。</li>
+</ul>
+<h3 id="2-编码器-解码器注意力中的Mask"><a href="#2-编码器-解码器注意力中的Mask" class="headerlink" title="2. 编码器-解码器注意力中的Mask"></a>2. 编码器-解码器注意力中的Mask</h3><h4 id="a-Padding-Mask"><a href="#a-Padding-Mask" class="headerlink" title="a. Padding Mask"></a>a. Padding Mask</h4><ul>
+<li><strong>用途</strong>：在编码器-解码器注意力中，解码器需要关注编码器的输出，因此也需要忽略填充部分的影响。</li>
+<li><strong>位置</strong>：在解码器的编码器-解码器注意力层。</li>
+<li><strong>原因</strong>：类似于自注意力中的填充掩码，确保解码器不会在注意力计算中考虑编码器输出中的填充位置。</li>
+<li><strong>实现</strong>：与自注意力中的填充掩码相同，将填充位置的注意力分数设为负无穷大。</li>
+</ul>
+<h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3. 总结"></a>3. 总结</h3><h4 id="为什么需要Mask？"><a href="#为什么需要Mask？" class="headerlink" title="为什么需要Mask？"></a>为什么需要Mask？</h4><ol>
+<li><strong>处理变长输入</strong>：保证填充部分不会影响注意力机制的计算，确保模型只关注实际输入部分。</li>
+<li><strong>保证因果性</strong>：在序列生成任务中，保证生成的每一步只依赖于当前及之前的信息，而不泄露未来的信息。</li>
+<li><strong>提高模型性能</strong>：通过适当的掩码操作，可以提高模型训练的有效性和稳定性，避免无意义的注意力计算。</li>
+</ol>
+<h3 id="实际例子"><a href="#实际例子" class="headerlink" title="实际例子"></a>实际例子</h3><h4 id="自注意力中的Look-Ahead-Mask"><a href="#自注意力中的Look-Ahead-Mask" class="headerlink" title="自注意力中的Look-Ahead Mask"></a>自注意力中的Look-Ahead Mask</h4><p>假设我们有一个输入序列<code>[A, B, C, D]</code>，在生成时，模型不应该在生成<code>B</code>时看到<code>C</code>和<code>D</code>。</p>
+<p>生成Look-Ahead Mask的矩阵如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line"> [0, -inf, -inf, -inf],</span><br><span class="line"> [0, 0, -inf, -inf],</span><br><span class="line"> [0, 0, 0, -inf],</span><br><span class="line"> [0, 0, 0, 0]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>在这个矩阵中，<code>0</code>表示可以关注，<code>-inf</code>表示掩盖。</p>
+<h4 id="Padding-Mask"><a href="#Padding-Mask" class="headerlink" title="Padding Mask"></a>Padding Mask</h4><p>假设输入序列<code>[A, B, PAD, PAD]</code>，<code>PAD</code>表示填充位置。</p>
+<p>生成的Padding Mask如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line"> [1, 1, 0, 0]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>在这个向量中，<code>1</code>表示实际输入位置，<code>0</code>表示填充位置。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>Mask在Transformer中起到了重要的作用，通过控制注意力机制的范围，确保模型在训练和推理过程中关注正确的信息，提高模型的性能和稳定性。</p>
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/icon.jpg" alt="Xiongyuqi"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Xiongyuqi</p><p class="is-size-6 is-block">Edward</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Dalian</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">21</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">6</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Mr-xiongyq" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Mr-xiongyq"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:xiongxixi666@gmail.com"><i class="fas fa-envelope"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-27T06:53:24.000Z">2024-06-27</time></p><p class="title"><a href="/2024/06/27/%E9%9D%A2%E7%BB%8F/">面经</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-13T12:15:51.000Z">2024-06-13</time></p><p class="title"><a href="/2024/06/13/%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">算法总结</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-06T03:16:00.000Z">2024-06-06</time></p><p class="title"><a href="/2024/06/06/KMP%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">KMP字符串匹配</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-05T23:52:19.000Z">2024-06-06</time></p><p class="title"><a href="/2024/06/06/%E9%98%9F%E5%88%97/">队列</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-05T23:49:01.000Z">2024-06-06</time></p><p class="title"><a href="/2024/06/06/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">滑动窗口</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/06/"><span class="level-start"><span class="level-item">六月 2024</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/05/"><span class="level-start"><span class="level-item">五月 2024</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/03/"><span class="level-start"><span class="level-item">三月 2024</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Computer/"><span class="tag">Computer</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"><span class="tag">字符串</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="tag">数据结构</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%97%A5%E5%B8%B8/"><span class="tag">日常</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9D%A2%E7%BB%8F1-swimtransformer/"><span class="tag">面经1-swimtransformer</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Blogs" height="28"></a><p class="is-size-7"><span>&copy; 2024 Xiongyuqi</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="GitHub上下载" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://npm.elemecdn.com/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://npm.elemecdn.com/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://npm.elemecdn.com/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://npm.elemecdn.com/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://npm.elemecdn.com/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://npm.elemecdn.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
