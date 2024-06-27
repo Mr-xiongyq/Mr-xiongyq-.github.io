@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>标签: 面经2-attention(注意力机制) - Blogs</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#ffffff"><meta name="application-name" content="Edward&#039;s Blogs"><meta name="msapplication-TileImage" content="/source/icon.jpg"><meta name="msapplication-TileColor" content="#ffffff"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Edward&#039;s Blogs"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Blogs"><meta property="og:url" content="https://mr-xiongyq.github.io/"><meta property="og:site_name" content="Blogs"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://mr-xiongyq.github.io/img/og_image.png"><meta property="article:author" content="Xiongyuqi"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://mr-xiongyq.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://mr-xiongyq.github.io"},"headline":"Blogs","image":["https://mr-xiongyq.github.io/img/og_image.png"],"author":{"@type":"Person","name":"Xiongyuqi"},"publisher":{"@type":"Organization","name":"Blogs","logo":{"@type":"ImageObject","url":"https://mr-xiongyq.github.io/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="https://npm.elemecdn.com/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://npm.elemecdn.com/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://npm.elemecdn.com/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://npm.elemecdn.com/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Blogs" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" target="_blank" rel="noopener" href="https://github.com/Mr-xiongyq">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub上下载" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">面经2-attention(注意力机制)</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-06-27T07:03:20.000Z" title="2024/6/27 15:03:20">2024-06-27</time>发表</span><span class="level-item"><time dateTime="2024-06-27T07:11:39.085Z" title="2024/6/27 15:11:39">2024-06-27</time>更新</span><span class="level-item">24 分钟读完 (大约3528个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/06/27/%E9%9D%A2%E7%BB%8F2-attention-%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/">面经2-attention(注意力机制)</a></p><div class="content"><h2 id="1-通俗的解释什么是attention"><a href="#1-通俗的解释什么是attention" class="headerlink" title="1.通俗的解释什么是attention"></a>1.通俗的解释什么是attention</h2><p>注意力机制（Attention Mechanism）是深度学习中一种非常重要的技术，它帮助模型更好地“关注”输入数据中的重要部分。为了更通俗地解释，我们可以用一个简单的类比来帮助理解。</p>
+<h3 id="类比：读书做笔记"><a href="#类比：读书做笔记" class="headerlink" title="类比：读书做笔记"></a>类比：读书做笔记</h3><p>假设你在阅读一本书，并且需要在阅读过程中做一些笔记。书中的内容非常多，但你不能也不需要记住每一个字。那么你会怎么做呢？你会重点关注那些对你来说重要的信息。注意力机制就像你在读书时选择性地关注重要内容一样。</p>
+<h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h3><ol>
+<li><p><strong>输入信息</strong>：</p>
+<ul>
+<li>你有一本书（输入数据），每一页上有很多文字（输入序列）。</li>
+</ul>
+</li>
+<li><p><strong>关键内容</strong>：</p>
+<ul>
+<li>你要做笔记，所以你需要找到哪些内容是最重要的，比如关键的段落、句子或单词。</li>
+</ul>
+</li>
+<li><p><strong>注意力权重</strong>：</p>
+<ul>
+<li>你给每个句子或段落分配一个重要性分数（权重）。更重要的内容分数更高，不太重要的内容分数更低。</li>
+</ul>
+</li>
+<li><p><strong>加权求和</strong>：</p>
+<ul>
+<li>你根据这些分数来决定每段内容在你笔记中的重要性。重要性高的内容，你会详细记下（加权求和后保留更多信息），重要性低的内容，你会略过或简要记下。</li>
+</ul>
+</li>
+</ol>
+<h3 id="在深度学习中的应用"><a href="#在深度学习中的应用" class="headerlink" title="在深度学习中的应用"></a>在深度学习中的应用</h3><p>在深度学习中，注意力机制通过以下步骤工作：</p>
+<ol>
+<li><p><strong>输入序列</strong>：</p>
+<ul>
+<li>模型接收一段输入序列，比如一句话的每个单词的表示（向量）。</li>
+</ul>
+</li>
+<li><p><strong>计算注意力分数</strong>：</p>
+<ul>
+<li>模型计算每个单词对当前处理单词的重要性，类似于你给每段内容分配一个重要性分数。</li>
+</ul>
+</li>
+<li><p><strong>生成注意力权重</strong>：</p>
+<ul>
+<li>使用这些分数通过一个softmax函数转化为注意力权重，这些权重和分数可以理解为“关注度”。</li>
+</ul>
+</li>
+<li><p><strong>加权求和</strong>：</p>
+<ul>
+<li>对输入序列中的所有单词的表示进行加权求和，权重高的单词对最终表示的影响更大。</li>
+</ul>
+</li>
+</ol>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>假设你在翻译一个句子：”The cat sat on the mat.”</p>
+<p>在翻译时，模型需要决定哪些单词对当前正在翻译的单词最重要。例如，在翻译“sat”时，模型可能会发现“cat”和“mat”也很重要，因为它们在语义上相关。这时，注意力机制会给“cat”和“mat”更高的权重，而给其他不太相关的单词更低的权重。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>注意力机制帮助模型在处理大量信息时，更加高效地聚焦于最相关和重要的部分。这不仅提高了模型的性能，也使得模型在处理复杂任务时更加灵活和精确。就像你在读书时会重点标记和记住重要的部分一样，注意力机制使得模型在处理数据时能够有效地“注意”到关键信息。</p>
+<h2 id="2-注意力机制的计算"><a href="#2-注意力机制的计算" class="headerlink" title="2.注意力机制的计算"></a>2.注意力机制的计算</h2><p>注意力机制（Attention Mechanism）在深度学习中的计算方法主要包括三个步骤：计算注意力分数、生成注意力权重、加权求和。以下是详细的计算过程，以自注意力（Self-Attention）为例进行解释。</p>
+<h3 id="1-输入表示"><a href="#1-输入表示" class="headerlink" title="1. 输入表示"></a>1. 输入表示</h3><p>假设我们有一个输入序列，表示为矩阵 (X)，其中每一行是输入序列中一个词的向量表示。对于一个长度为 (n) 的序列，每个词的向量维度为 (d)，输入矩阵 (X) 的形状为 (n \times d)。</p>
+<h3 id="2-计算查询（Query）、键（Key）和值（Value）"><a href="#2-计算查询（Query）、键（Key）和值（Value）" class="headerlink" title="2. 计算查询（Query）、键（Key）和值（Value）"></a>2. 计算查询（Query）、键（Key）和值（Value）</h3><p>首先，我们需要为每个输入向量计算查询（Query）、键（Key）和值（Value）向量。这是通过三个不同的线性变换完成的。假设 (W_Q)、(W_K) 和 (W_V) 分别是查询、键和值的权重矩阵，它们的形状都是 (d \times d_k)。</p>
+<p>[ Q &#x3D; XW_Q ]<br>[ K &#x3D; XW_K ]<br>[ V &#x3D; XW_V ]</p>
+<p>其中，(Q)、(K) 和 (V) 分别是查询、键和值的矩阵，它们的形状都是 (n \times d_k)。</p>
+<h3 id="3-计算注意力分数（Attention-Scores）"><a href="#3-计算注意力分数（Attention-Scores）" class="headerlink" title="3. 计算注意力分数（Attention Scores）"></a>3. 计算注意力分数（Attention Scores）</h3><p>接下来，我们计算查询和键的点积来得到注意力分数。注意力分数表示每个词对其他词的重要性。</p>
+<p>[ \text{scores} &#x3D; QK^T ]</p>
+<p>这里，(\text{scores}) 的形状是 (n \times n)，表示每个词对其他所有词的注意力分数。</p>
+<h3 id="4-生成注意力权重（Attention-Weights）"><a href="#4-生成注意力权重（Attention-Weights）" class="headerlink" title="4. 生成注意力权重（Attention Weights）"></a>4. 生成注意力权重（Attention Weights）</h3><p>为了使得注意力分数更稳定，我们会对其进行缩放，除以 (\sqrt{d_k})。接下来，应用softmax函数将注意力分数转化为注意力权重，这些权重表示每个词对其他词的注意力分配。</p>
+<p>[ \text{scaled_scores} &#x3D; \frac{QK^T}{\sqrt{d_k}} ]<br>[ \text{weights} &#x3D; \text{softmax}(\text{scaled_scores}) ]</p>
+<p>注意力权重矩阵 (\text{weights}) 的形状也是 (n \times n)。</p>
+<h3 id="5-加权求和（Weighted-Sum）"><a href="#5-加权求和（Weighted-Sum）" class="headerlink" title="5. 加权求和（Weighted Sum）"></a>5. 加权求和（Weighted Sum）</h3><p>最后，使用注意力权重对值（Value）向量进行加权求和，得到最终的输出。</p>
+<p>[ \text{output} &#x3D; \text{weights}V ]</p>
+<p>输出矩阵 (\text{output}) 的形状是 (n \times d_k)。</p>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>注意力机制的计算过程可以总结为以下几个步骤：</p>
+<ol>
+<li><p><strong>计算查询、键和值</strong>：<br>[ Q &#x3D; XW_Q, \quad K &#x3D; XW_K, \quad V &#x3D; XW_V ]</p>
+</li>
+<li><p><strong>计算注意力分数</strong>：<br>[ \text{scores} &#x3D; QK^T ]</p>
+</li>
+<li><p><strong>缩放注意力分数并应用softmax</strong>：<br>[ \text{scaled_scores} &#x3D; \frac{\text{scores}}{\sqrt{d_k}}, \quad \text{weights} &#x3D; \text{softmax}(\text{scaled_scores}) ]</p>
+</li>
+<li><p><strong>计算加权求和</strong>：<br>[ \text{output} &#x3D; \text{weights}V ]</p>
+</li>
+</ol>
+<p>这个过程实现了从输入序列到输出序列的自适应权重计算，使得模型能够关注到输入序列中的重要部分。这种机制在各种任务（如机器翻译、文本生成、图像处理等）中都表现出了强大的性能。</p>
+<h2 id="3-注意力机制的k-q相似度计算都有哪些方法，各自有什么优缺点"><a href="#3-注意力机制的k-q相似度计算都有哪些方法，各自有什么优缺点" class="headerlink" title="3.注意力机制的k,q相似度计算都有哪些方法，各自有什么优缺点"></a>3.注意力机制的k,q相似度计算都有哪些方法，各自有什么优缺点</h2><p>在注意力机制中，查询（Query，Q）和键（Key，K）之间的相似度计算是核心步骤，用于确定注意力权重。不同的相似度计算方法有不同的优缺点。以下是几种常见的方法及其优缺点：</p>
+<h3 id="1-点积相似度（Dot-Product-Similarity）"><a href="#1-点积相似度（Dot-Product-Similarity）" class="headerlink" title="1. 点积相似度（Dot-Product Similarity）"></a>1. 点积相似度（Dot-Product Similarity）</h3><h4 id="计算方法"><a href="#计算方法" class="headerlink" title="计算方法"></a>计算方法</h4><p>[ \text{score}(Q, K) &#x3D; Q \cdot K^T ]</p>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li><strong>计算简单</strong>：点积相似度计算非常高效，尤其是在硬件加速（如GPU）上可以充分利用矩阵乘法的优化。</li>
+<li><strong>常用方法</strong>：点积相似度是Transformer模型中的默认选择，被广泛使用和验证。</li>
+</ul>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li><strong>维度影响</strong>：随着向量维度增加，点积值可能会变得很大，导致softmax函数的梯度过小。为此，通常需要缩放因子（如 (\sqrt{d_k})）来稳定计算。</li>
+</ul>
+<h3 id="2-缩放点积相似度（Scaled-Dot-Product-Similarity）"><a href="#2-缩放点积相似度（Scaled-Dot-Product-Similarity）" class="headerlink" title="2. 缩放点积相似度（Scaled Dot-Product Similarity）"></a>2. 缩放点积相似度（Scaled Dot-Product Similarity）</h3><h4 id="计算方法-1"><a href="#计算方法-1" class="headerlink" title="计算方法"></a>计算方法</h4><p>[ \text{score}(Q, K) &#x3D; \frac{Q \cdot K^T}{\sqrt{d_k}} ]</p>
+<h4 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h4><ul>
+<li><strong>稳定梯度</strong>：通过缩放因子 (\sqrt{d_k}) 减少了随着维度增加而导致的梯度消失问题。</li>
+<li><strong>广泛应用</strong>：在Transformer模型中被默认使用，性能稳定。</li>
+</ul>
+<h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li><strong>需要缩放</strong>：虽然解决了梯度问题，但增加了一步额外的缩放计算。</li>
+</ul>
+<h3 id="3-余弦相似度（Cosine-Similarity）"><a href="#3-余弦相似度（Cosine-Similarity）" class="headerlink" title="3. 余弦相似度（Cosine Similarity）"></a>3. 余弦相似度（Cosine Similarity）</h3><h4 id="计算方法-2"><a href="#计算方法-2" class="headerlink" title="计算方法"></a>计算方法</h4><p>[ \text{score}(Q, K) &#x3D; \frac{Q \cdot K^T}{|Q| |K|} ]</p>
+<h4 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h4><ul>
+<li><strong>归一化相似度</strong>：将向量的相似度归一化到[-1, 1]之间，消除了向量长度对相似度的影响。</li>
+<li><strong>可解释性强</strong>：余弦相似度在各种应用中都有较好的解释性。</li>
+</ul>
+<h4 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li><strong>计算复杂度</strong>：需要计算向量的范数，增加了计算复杂度。</li>
+<li><strong>性能问题</strong>：在某些场景下，余弦相似度的效果可能不如点积相似度。</li>
+</ul>
+<h3 id="4-加性注意力（Additive-Attention-或-Bahdanau-Attention）"><a href="#4-加性注意力（Additive-Attention-或-Bahdanau-Attention）" class="headerlink" title="4. 加性注意力（Additive Attention 或 Bahdanau Attention）"></a>4. 加性注意力（Additive Attention 或 Bahdanau Attention）</h3><h4 id="计算方法-3"><a href="#计算方法-3" class="headerlink" title="计算方法"></a>计算方法</h4><p>[ \text{score}(Q, K) &#x3D; w^T \tanh(W_Q Q + W_K K + b) ]<br>其中，(w)、(W_Q)、(W_K) 和 (b) 是可训练的参数。</p>
+<h4 id="优点-3"><a href="#优点-3" class="headerlink" title="优点"></a>优点</h4><ul>
+<li><strong>灵活性高</strong>：通过可训练参数，可以更灵活地学习不同类型的相似度。</li>
+<li><strong>广泛应用</strong>：特别是在早期的Seq2Seq模型中应用广泛。</li>
+</ul>
+<h4 id="缺点-3"><a href="#缺点-3" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li><strong>计算开销大</strong>：涉及更多的参数和非线性操作（tanh），计算开销较大。</li>
+<li><strong>复杂度高</strong>：相比点积相似度，计算更复杂。</li>
+</ul>
+<h3 id="5-高斯注意力（Gaussian-Attention）"><a href="#5-高斯注意力（Gaussian-Attention）" class="headerlink" title="5. 高斯注意力（Gaussian Attention）"></a>5. 高斯注意力（Gaussian Attention）</h3><h4 id="计算方法-4"><a href="#计算方法-4" class="headerlink" title="计算方法"></a>计算方法</h4><p>[ \text{score}(Q, K) &#x3D; \exp\left(-\frac{|Q - K|^2}{2\sigma^2}\right) ]</p>
+<h4 id="优点-4"><a href="#优点-4" class="headerlink" title="优点"></a>优点</h4><ul>
+<li><strong>平滑注意力分布</strong>：使用高斯函数计算相似度，可以产生更加平滑的注意力分布。</li>
+<li><strong>与距离相关</strong>：自然地反映了向量之间的欧氏距离。</li>
+</ul>
+<h4 id="缺点-4"><a href="#缺点-4" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li><strong>参数选择</strong>：需要选择合适的 (\sigma) 值，参数选择不当可能导致效果不佳。</li>
+<li><strong>计算开销大</strong>：计算欧氏距离和指数函数增加了计算开销。</li>
+</ul>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>每种相似度计算方法都有其特定的优缺点，选择哪种方法通常取决于具体应用场景和需求：</p>
+<ul>
+<li><strong>点积相似度和缩放点积相似度</strong>：计算简单高效，适用于大多数Transformer模型。</li>
+<li><strong>余弦相似度</strong>：适用于需要归一化相似度的场景，但计算复杂度较高。</li>
+<li><strong>加性注意力</strong>：灵活性高，但计算开销大，适用于需要灵活相似度计算的应用。</li>
+<li><strong>高斯注意力</strong>：平滑分布和距离相关，但计算复杂度和参数选择是挑战。</li>
+</ul>
+<p>实际应用中，缩放点积相似度是最常用和有效的方法，尤其是在Transformer架构中。</p>
+<h2 id="4-attention的计算中为什么要除以根号dk"><a href="#4-attention的计算中为什么要除以根号dk" class="headerlink" title="4.attention的计算中为什么要除以根号dk"></a>4.attention的计算中为什么要除以根号dk</h2><p>在注意力机制的计算中，将点积相似度除以 (\sqrt{d_k}) 是为了稳定计算过程，防止数值溢出。这一步骤通常称为<strong>缩放点积相似度</strong>（Scaled Dot-Product Attention）。以下是详细的原因和解释：</p>
+<h3 id="原因和解释"><a href="#原因和解释" class="headerlink" title="原因和解释"></a>原因和解释</h3><h4 id="1-避免数值不稳定"><a href="#1-避免数值不稳定" class="headerlink" title="1. 避免数值不稳定"></a>1. 避免数值不稳定</h4><ul>
+<li><p><strong>高维点积值过大</strong>：</p>
+<ul>
+<li>在高维空间中，向量的点积值随着维度的增加会变得很大。这是因为点积的结果是多个元素乘积的累加，维度越高，累加的值越大。假设两个向量 (Q) 和 (K) 的每个元素都是均值为零、方差为1的独立随机变量，那么它们的点积 (\sum_{i&#x3D;1}^{d_k} Q_i K_i) 的方差是 (d_k)。随着 (d_k) 增加，点积的值会越来越大。</li>
+</ul>
+</li>
+<li><p><strong>softmax梯度消失</strong>：</p>
+<ul>
+<li>在计算注意力权重时，点积相似度值作为输入会被传递到softmax函数中。如果这些值很大，softmax函数的输出会变得极端，即接近0或1。这会导致梯度消失问题，使得模型在训练过程中难以有效更新参数。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-缩放稳定计算"><a href="#2-缩放稳定计算" class="headerlink" title="2. 缩放稳定计算"></a>2. 缩放稳定计算</h4><ul>
+<li><strong>缩放因子 (\sqrt{d_k})</strong>：<ul>
+<li>为了避免上述问题，我们在计算点积相似度后，除以 (\sqrt{d_k})。这一缩放因子将点积相似度值缩小到一个更合理的范围，防止值过大。</li>
+<li>具体地，缩放后的值更接近于均值为0、方差为1的标准正态分布。这使得softmax函数的输入值不会太大，从而生成的注意力权重更加平滑，梯度更新也更稳定。</li>
+</ul>
+</li>
+</ul>
+<h3 id="数学解释"><a href="#数学解释" class="headerlink" title="数学解释"></a>数学解释</h3><p>假设 (Q) 和 (K) 是维度为 (d_k) 的向量：<br>[ \text{score}(Q, K) &#x3D; Q \cdot K^T &#x3D; \sum_{i&#x3D;1}^{d_k} Q_i K_i ]</p>
+<p>如果 (Q_i) 和 (K_i) 的元素是均值为0、方差为1的随机变量，那么点积的结果的期望值为0，但方差为 (d_k)：<br>[ \text{Var}(Q \cdot K^T) &#x3D; d_k ]</p>
+<p>为了使得点积相似度的方差不随 (d_k) 增加，我们将其除以 (\sqrt{d_k})：<br>[ \text{scaled_score}(Q, K) &#x3D; \frac{Q \cdot K^T}{\sqrt{d_k}} ]</p>
+<p>这将点积的方差标准化为1，输入到softmax函数的值范围更加稳定。</p>
+<h3 id="例子和效果"><a href="#例子和效果" class="headerlink" title="例子和效果"></a>例子和效果</h3><p>例如，在维度 (d_k &#x3D; 64) 的情况下，如果不进行缩放，点积的值可能会变得很大（例如，在0到64之间）。经过softmax后，权重会极端化，导致某些注意力权重接近1，而其他接近0。这种极端的权重分布会使模型的学习变得困难。而通过缩放因子 (\sqrt{64} &#x3D; 8)，点积值会被缩小到一个更合理的范围（例如，在0到8之间），使得softmax输出的权重更平滑，梯度更稳定。</p>
+<h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><p>将点积相似度除以 (\sqrt{d_k}) 的目的是为了：</p>
+<ol>
+<li>防止高维向量点积值过大导致的数值不稳定问题。</li>
+<li>生成更平滑的注意力权重分布，避免softmax输出的极端化，稳定梯度更新过程。</li>
+</ol>
+<p>这一步骤是Transformer模型中的一个重要细节，确保了注意力机制在高维情况下的有效性和稳定性。</p>
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/icon.jpg" alt="Xiongyuqi"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Xiongyuqi</p><p class="is-size-6 is-block">Edward</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Dalian</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">22</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">7</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/Mr-xiongyq" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/Mr-xiongyq"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:xiongxixi666@gmail.com"><i class="fas fa-envelope"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-27T07:03:20.000Z">2024-06-27</time></p><p class="title"><a href="/2024/06/27/%E9%9D%A2%E7%BB%8F2-attention-%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/">面经2-attention(注意力机制)</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-27T06:53:24.000Z">2024-06-27</time></p><p class="title"><a href="/2024/06/27/%E9%9D%A2%E7%BB%8F/">面经</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-13T12:15:51.000Z">2024-06-13</time></p><p class="title"><a href="/2024/06/13/%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">算法总结</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-06T03:16:00.000Z">2024-06-06</time></p><p class="title"><a href="/2024/06/06/KMP%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">KMP字符串匹配</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-06-05T23:52:19.000Z">2024-06-06</time></p><p class="title"><a href="/2024/06/06/%E9%98%9F%E5%88%97/">队列</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2024/06/"><span class="level-start"><span class="level-item">六月 2024</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/05/"><span class="level-start"><span class="level-item">五月 2024</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/03/"><span class="level-start"><span class="level-item">三月 2024</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Computer/"><span class="tag">Computer</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"><span class="tag">字符串</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="tag">数据结构</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%97%A5%E5%B8%B8/"><span class="tag">日常</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AE%97%E6%B3%95/"><span class="tag">算法</span><span class="tag">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9D%A2%E7%BB%8F1-swimtransformer/"><span class="tag">面经1-swimtransformer</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9D%A2%E7%BB%8F2-attention-%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"><span class="tag">面经2-attention(注意力机制)</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Blogs" height="28"></a><p class="is-size-7"><span>&copy; 2024 Xiongyuqi</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="GitHub上下载" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://npm.elemecdn.com/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://npm.elemecdn.com/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://npm.elemecdn.com/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://npm.elemecdn.com/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://npm.elemecdn.com/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://npm.elemecdn.com/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
