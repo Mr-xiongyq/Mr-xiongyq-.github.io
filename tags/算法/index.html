@@ -29,7 +29,7 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Blogs" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" target="_blank" rel="noopener" href="https://github.com/Mr-xiongyq">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub上下载" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">算法</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-08-06T14:14:10.000Z" title="2024/8/6 22:14:10">2024-08-06</time>发表</span><span class="level-item"><time dateTime="2024-08-06T14:15:04.538Z" title="2024/8/6 22:15:04">2024-08-06</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3/">算法题解</a></span><span class="level-item">2 分钟读完 (大约343个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/08/06/%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6%E5%A4%8F%E4%BB%A4%E8%90%A5%E6%9C%BA%E8%AF%95%E7%AC%AC%E4%B8%80%E9%A2%98/">厦门大学夏令营机试第一题-根据数字各位数之和排序</a></p><div class="content"><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一串数字，需要对这串数字进行排序。排序规则如下：</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Blogs" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" target="_blank" rel="noopener" href="https://github.com/Mr-xiongyq">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub上下载" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">算法</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-08-06T14:14:10.000Z" title="2024/8/6 22:14:10">2024-08-06</time>发表</span><span class="level-item"><time dateTime="2024-08-06T14:18:04.069Z" title="2024/8/6 22:18:04">2024-08-06</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3/">算法题解</a></span><span class="level-item">3 分钟读完 (大约440个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/08/06/%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6%E5%A4%8F%E4%BB%A4%E8%90%A5%E6%9C%BA%E8%AF%95%E7%AC%AC%E4%B8%80%E9%A2%98/">厦门大学夏令营机试第一题-根据数字各位数之和排序</a></p><div class="content"><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一串数字，需要对这串数字进行排序。排序规则如下：</p>
 <ol>
 <li>按照每个数字各位数之和从小到大排序。</li>
 <li>如果各位数之和相同，则按照数字的大小从小到大排序。</li>
@@ -51,28 +51,29 @@
 #include &lt;algorithm&gt;
 #include &lt;string&gt;
 using namespace std;
+
 // 计算数字每一位的和
 int digitSum(int number) &#123;
-    int sum = 0;
+    int sum = 0;  // 初始化和为0
     while (number) &#123;
-        sum += number % 10;
-        number /= 10;
+        sum += number % 10;  // 将当前位加到和上
+        number /= 10;  // 去掉当前位
     &#125;
-    return sum;
+    return sum;  // 返回各位数之和
 &#125;
 
 // 比较函数
 bool compare(int a, int b) &#123;
-    int sumA = digitSum(a);
-    int sumB = digitSum(b);
+    int sumA = digitSum(a);  // 计算a的各位数之和
+    int sumB = digitSum(b);  // 计算b的各位数之和
     if (sumA == sumB) &#123;
-        return a &lt; b;
+        return a &lt; b;  // 如果各位数之和相等，按数值大小排序
     &#125;
-    return sumA &lt; sumB;
+    return sumA &lt; sumB;  // 否则按各位数之和排序
 &#125;
 
 int main() &#123;
-    vector&lt;int&gt; numbers;
+    vector&lt;int&gt; numbers;  // 存储输入的数字
     int n;
     
     cout &lt;&lt; &quot;请输入数字个数: &quot;;
@@ -82,7 +83,7 @@ int main() &#123;
     for (int i = 0; i &lt; n; ++i) &#123;
         int num;
         cin &gt;&gt; num;
-        numbers.push_back(num);
+        numbers.push_back(num);  // 将输入的数字添加到数组中
     &#125;
     
     // 按照比较函数排序
@@ -90,7 +91,7 @@ int main() &#123;
     
     cout &lt;&lt; &quot;排序后的数字: &quot;;
     for (int num : numbers) &#123;
-        cout &lt;&lt; num &lt;&lt; &quot; &quot;;
+        cout &lt;&lt; num &lt;&lt; &quot; &quot;;  // 输出排序后的数字
     &#125;
     cout &lt;&lt; endl;
 
