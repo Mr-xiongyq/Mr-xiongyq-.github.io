@@ -29,62 +29,19 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Blogs" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" target="_blank" rel="noopener" href="https://github.com/Mr-xiongyq">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub上下载" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-11-03T15:19:23.000Z" title="2024/11/3 23:19:23">2024-11-03</time>发表</span><span class="level-item"><time dateTime="2024-11-03T15:25:44.764Z" title="2024/11/3 23:25:44">2024-11-03</time>更新</span><span class="level-item">3 分钟读完 (大约406个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/11/03/tmux%E7%9A%84%E4%BD%BF%E7%94%A8/">tmux的使用</a></p><div class="content"><p>tmux 是一个终端复用器，它允许你在一个终端窗口内管理多个会话，适合在远程服务器上工作时保持会话活跃、分割窗口等。以下是 tmux 的基本用法：</p>
-<ol>
-<li>启动 tmux</li>
-</ol>
-<p>tmux</p>
-<p>或带上会话名：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux new -s session_name</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li><p>分离和重新连接会话</p>
-<p> •	分离当前会话：按 Ctrl + b，然后按 d（表示 Detach），此时你会返回到原本的终端。<br> •	查看所有会话：</p>
-</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tmux <span class="built_in">ls</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>•重新连接会话：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux attach -t session_name</span><br></pre></td></tr></table></figure>
-<p>•删除会话：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux kill-session -t session_name</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li><p>分割窗口</p>
-<p> •	水平分割窗口：按 Ctrl + b 后再按 %<br> •	垂直分割窗口：按 Ctrl + b 后再按 “</p>
-</li>
-<li><p>在窗口之间切换</p>
-<p> •	切换面板：按 Ctrl + b，再按方向键选择不同的面板。<br> •	创建新窗口：Ctrl + b 后按 c 创建一个新窗口。<br> •	切换窗口：<br> •	按 Ctrl + b，再按 n 切换到下一个窗口。<br> •	按 Ctrl + b，再按 p 切换到上一个窗口。<br> •	按 Ctrl + b，再按数字键 0 - 9 可以快速跳转到指定窗口。</p>
-</li>
-<li><p>常用命令总结</p>
-<p> •	关闭面板：exit 退出当前终端，或者 Ctrl + d。<br> •	重命名窗口：按 Ctrl + b，然后按 , 输入新名称。<br> •	查看快捷键帮助：按 Ctrl + b，然后按 ?。</p>
-</li>
-<li><p>保存和恢复会话</p>
-</li>
-</ol>
-<p>可以使用 tmux-resurrect 插件来保存和恢复会话，适用于更复杂的 tmux 会话管理。</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-11-03T11:27:35.000Z" title="2024/11/3 19:27:35">2024-11-03</time>发表</span><span class="level-item"><time dateTime="2024-11-03T11:27:49.727Z" title="2024/11/3 19:27:49">2024-11-03</time>更新</span><span class="level-item">5 分钟读完 (大约723个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/11/03/visrag/">visrag</a></p><div class="content"><p>该代码展示了 VisRAG_Ret 模型的结构，这是一个多模态的深度神经网络模型，结合了文本和视觉的处理能力，常用于视觉-语言任务。以下是主要组件的解释：</p>
-<pre><code>1.	文本处理部分 (llm)：
-•	MiniCPMForCausalLM：这是 VisRAG 结构中的语言模型部分，负责生成和理解文本，通常用于因果语言建模。
-•	嵌入层 (embed_tokens)：将文本中的词（token）映射到一个高维空间中（2304维度）。
-•	解码层（40层 MiniCPMDecoderLayer）：这些层对嵌入后的词进行自注意力和前馈转换。
-•	自注意力 (MiniCPMSdpaAttention)：包括查询 (q_proj)、键 (k_proj) 和值 (v_proj) 投影层（每层2304特征），以及输出投影层 (o_proj)，帮助模型关注输入序列的不同部分。
-•	旋转嵌入 (rotary_emb)：提供位置信息，对处理序列化的数据非常重要。
-•	MLP层 (MiniCPMMLP)：一个前馈网络，包含线性变换层 (gate_proj, up_proj, down_proj) 和激活函数 (SiLU)。
-•	层归一化 (MiniCPMRMSNorm)：对输出进行归一化，稳定网络，提高泛化能力。
-•	输出层 (lm_head)：生成词汇表中每个词的预测分数（共122,753个词），用于最终的文本预测。
-2.	视觉处理部分 (vpm)：
-•	VisionTransformer：一个适用于处理图像的transformer模型。
-•	Patch Embedding：将图像划分成小块（例如14x14的patch），并将每块嵌入，使模型能够按序列化token的形式处理这些图像块。
-•	Dropout层：在训练时加入dropout，以防止过拟合。
-•	Transformer Block：每个block通过注意力层和MLP层对patch进行处理。
-•	注意力层 (attn)：处理patch之间的关系，包含用于查询、键和值的线性层。
-•	MLP层：应用线性变换和GELU激活函数，增加patch交互的非线性效果。
-•	层归一化：在各层间使用归一化以稳定网络。
-•	最终归一化和池化：对patch表示进行最终变换，使其能够被有效地组合。
-3.	重采样器 (Resampler)：
-•	该部分帮助视觉模型的输出与文本模型的维度（2304）匹配。
-•	多头注意力 (attn)：允许视觉和文本表示之间的跨模态对齐。
-•	层归一化层 (ln_q, ln_kv, ln_post)：进一步优化文本和视觉特征之间的交互。
-</code></pre>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Blogs" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" target="_blank" rel="noopener" href="https://github.com/Mr-xiongyq">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub上下载" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-11-03T15:19:23.000Z" title="2024/11/3 23:19:23">2024-11-03</time>发表</span><span class="level-item"><time dateTime="2024-11-04T02:17:08.593Z" title="2024/11/4 10:17:08">2024-11-04</time>更新</span><span class="level-item">3 分钟读完 (大约406个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/11/03/tmux%E7%9A%84%E4%BD%BF%E7%94%A8/">tmux的使用</a></p><div class="content">tmux基本用法</div><a class="article-more button is-small is-size-7" href="/2024/11/03/tmux%E7%9A%84%E4%BD%BF%E7%94%A8/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-11-03T11:27:35.000Z" title="2024/11/3 19:27:35">2024-11-03</time>发表</span><span class="level-item"><time dateTime="2024-11-05T02:56:45.786Z" title="2024/11/5 10:56:45">2024-11-05</time>更新</span><span class="level-item">8 分钟读完 (大约1264个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/11/03/visrag/">visrag</a></p><div class="content"><p>该代码展示了 VisRAG_Ret 模型的结构，这是一个多模态的深度神经网络模型，结合了文本和视觉的处理能力，常用于视觉-语言任务。以下是主要组件的解释：</p>
+<h3 id="1-文本处理部分-llm-："><a href="#1-文本处理部分-llm-：" class="headerlink" title="1.	文本处理部分 (llm)："></a>1.	文本处理部分 (llm)：</h3><p>•MiniCPMForCausalLM：这是 VisRAG 结构中的语言模型部分，负责生成和理解文本，通常用于因果语言建模。<br>•嵌入层 (embed_tokens)：将文本中的词（token）映射到一个高维空间中（2304维度）。<br>•解码层（40层 MiniCPMDecoderLayer）：这些层对嵌入后的词进行自注意力和前馈转换。<br>•自注意力 (MiniCPMSdpaAttention)：包括查询 (q_proj)、键 (k_proj) 和值 (v_proj) 投影层（每层2304特征），以及输出投影层 (o_proj)，帮助模型关注输入序列的不同部分。<br>•旋转嵌入 (rotary_emb)：提供位置信息，对处理序列化的数据非常重要。<br>•MLP层 (MiniCPMMLP)：一个前馈网络，包含线性变换层 (gate_proj, up_proj, down_proj) 和激活函数 (SiLU)。<br>•层归一化 (MiniCPMRMSNorm)：对输出进行归一化，稳定网络，提高泛化能力。<br>•输出层 (lm_head)：生成词汇表中每个词的预测分数（共122,753个词），用于最终的文本预测。</p>
+<h3 id="2-视觉处理部分-vpm-："><a href="#2-视觉处理部分-vpm-：" class="headerlink" title="2.	视觉处理部分 (vpm)："></a>2.	视觉处理部分 (vpm)：</h3><p>•VisionTransformer：一个适用于处理图像的transformer模型。<br>•Patch Embedding：将图像划分成小块（例如14x14的patch），并将每块嵌入，使模型能够按序列化token的形式处理这些图像块。<br>•Dropout层：在训练时加入dropout，以防止过拟合。<br>•Transformer Block：每个block通过注意力层和MLP层对patch进行处理。<br>•注意力层 (attn)：处理patch之间的关系，包含用于查询、键和值的线性层。<br>•MLP层：应用线性变换和GELU激活函数，增加patch交互的非线性效果。<br>•层归一化：在各层间使用归一化以稳定网络。<br>•最终归一化和池化：对patch表示进行最终变换，使其能够被有效地组合。</p>
+<h3 id="3-重采样器-Resampler-："><a href="#3-重采样器-Resampler-：" class="headerlink" title="3. 重采样器 (Resampler)："></a>3. 重采样器 (Resampler)：</h3><p>•该部分帮助视觉模型的输出与文本模型的维度（2304）匹配。<br>•多头注意力 (attn)：允许视觉和文本表示之间的跨模态对齐。<br>•层归一化层 (ln_q, ln_kv, ln_post)：进一步优化文本和视觉特征之间的交互。</p>
 <p>综上所述，VisRAG_Ret 结构能够对视觉和文本数据进行联合处理，适用于视觉问答、图像描述生成和多模态检索等任务。</p>
+<p>这段实验描述中，VisRAG-Ret是一个基于MiniCPM-V 2.0的文档嵌入模型。它使用SigLIP作为视觉编码器，并使用MiniCPM作为语言模型。为了公平比较，实验分成三个场景来测试模型的性能：off-the-shelf、out-of-domain和in-domain。</p>
+<p>以下是每个实验场景的解释：</p>
+<ol>
+<li>Off-the-shelf（现成模型）：直接使用流行的文本和图像检索模型，在提取的文本数据上进行评估，包括：<br>•BM25 (OCR)：一种基于词汇的模型，用于文本检索。<br>•bge-large-en-v1.5 和 NV-Embed-v2：OCR模型，分别具有335M和7.85B的参数量，属于最先进的文本嵌入模型。<br>•SigLIP：一种CLIP风格的视觉模型，用于MiniCPM-V系列的编码器。<br>这一部分主要测试现成的、已经训练好的模型在该任务上的性能。</li>
+<li>   Out-of-domain（跨领域）：这些模型仅在合成数据上进行训练，并在VQA（视觉问答）数据集上进行评估，缺少特定领域的监督信息，旨在测试模型的泛化能力。这些模型包括：<br>•MiniCPM (OCR) 和 MiniCPM (Captioner)：基于MiniCPM的文本嵌入模型。<br>•SigLIP：视觉模型。<br>这个场景主要关注模型在缺乏领域特定数据时的表现。</li>
+<li>   In-domain（领域内）：这些模型在VQA训练数据和合成数据的混合上进行训练，带有领域内的监督标签。通过这一设置，评估相同模型在领域内数据下的表现。<br>•与out-of-domain相同的模型集在这一场景下进行测试，以便比较监督标签对模型性能的提升。</li>
+</ol>
+<p>这个实验设置的目的是评估不同模型在现成状态、跨领域和领域内数据的不同场景下的性能，从而比较其泛化能力和领域内表现。</p>
 </div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-10-29T06:27:55.000Z" title="2024/10/29 14:27:55">2024-10-29</time>发表</span><span class="level-item"><time dateTime="2024-10-29T10:03:13.840Z" title="2024/10/29 18:03:13">2024-10-29</time>更新</span><span class="level-item">12 分钟读完 (大约1759个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/10/29/%E5%A4%9A%E6%A8%A1%E6%80%81rag%E5%AD%A6%E4%B9%A0/">多模态rag学习</a></p><div class="content">多模态rag学习之路</div><a class="article-more button is-small is-size-7" href="/2024/10/29/%E5%A4%9A%E6%A8%A1%E6%80%81rag%E5%AD%A6%E4%B9%A0/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2024-09-30T02:43:35.000Z" title="2024/9/30 10:43:35">2024-09-30</time>发表</span><span class="level-item"><time dateTime="2024-09-30T04:21:20.000Z" title="2024/9/30 12:21:20">2024-09-30</time>更新</span><span class="level-item">6 分钟读完 (大约854个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/09/30/transformer%E5%85%B7%E4%BD%93%E8%AE%A1%E7%AE%97/">transformer具体计算</a></p><div class="content"><p>为了详细说明 Transformer 模型在机器翻译中的向量计算过程，我们将从输入的英文句子 <strong>“I went to Northeastern University”</strong> 和对应的中文标注 <strong>“我去东北大学”</strong> 入手，介绍从词嵌入、注意力计算、解码器中的多头注意力到最终生成的详细步骤。为了让具体过程更具可操作性，我将向量的维度和数量缩小化，以便说明整个过程。</p>
 <h3 id="1-词嵌入（Embedding）"><a href="#1-词嵌入（Embedding）" class="headerlink" title="1. 词嵌入（Embedding）"></a>1. <strong>词嵌入（Embedding）</strong></h3><p>假设我们的模型使用了词嵌入向量的维度 ( d_{\text{model}} &#x3D; 4 )（简化，实际中通常是 512 或 1024），句子中的每个词通过嵌入层映射为长度为 4 的向量。以下是简化的词嵌入向量（这些向量在实际中是通过预训练或模型学习得到的）：</p>
 <h4 id="英文句子："><a href="#英文句子：" class="headerlink" title="英文句子："></a>英文句子：</h4><ul>
